@@ -13,7 +13,7 @@ function Blog() {
                     <ul className="blog-posts-list">
                         {blogPosts.map((post) => (
                             <li className="blog-post-item" key={post.slug}>
-                                <Link href={`/blog/${post.slug}`}>
+                                <Link href={post.articleLink || `/blog/${post.slug}`} target={post.articleLink ? "_blank" : "_self"}>
                                     <figure className="blog-banner-box">
                                         <img
                                             src={post.image}
